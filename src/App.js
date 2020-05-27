@@ -23,7 +23,9 @@ function App() {
   }
 
   function copyCssToClipboard() {
-    let css = "\"border-radius: " + values.borderTopLeftRadius + " " + values.borderTopRightRadius + " " + values.borderBottomRightRadius + " " + values.borderBottomLeftRadius + ";\"";
+    let css = "\"border-radius: " + values.borderTopLeftRadius + " " 
+              + values.borderTopRightRadius + " " + values.borderBottomRightRadius + 
+              " " + values.borderBottomLeftRadius + ";\"";
     navigator.clipboard.writeText(css)
   }
 
@@ -37,7 +39,8 @@ function App() {
       <input type="number" name="borderBottomLeftRadius" onChange={changeValues} min="1"/>
       <label for="borderBottomRightRadius"> Bottom right </label>
       <input type="number" name="borderBottomRightRadius" onChange={changeValues} min="1"/>
-      <div className="box" style={values} onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} onClick={copyCssToClipboard}>
+      <div className="box" style={values} onMouseEnter={() => setIsShown(true)} 
+            onMouseLeave={() => setIsShown(false)} onClick={copyCssToClipboard}>
         {shown && <strong> Click to copy CSS </strong>}
       </div>
     </div>
